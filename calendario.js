@@ -41,17 +41,9 @@ document.addEventListener('DOMContentLoaded', function( ) {
             daysContainer.appendChild(dayDiv);
         }
 
-        // Next month's dates
-        //const nextMonthStartDay = 7 - new Date(year, month + 1, 0).getDate() - 1;
-        //for (let i = 1; i <= nextMonthStartDay; i++) {
-        //    const dayDiv = document.createElement('div');
-        //    dayDiv.textContent = i;
-        //    dayDiv.classList.add('fade');
-        //    daysContainer.appendChild(dayDiv);
-        //}
-        // Dias do próximo mês (para completar múltiplos de 7)
+        // Next month's date
         const totalDisplayed = firstDay + lastDay;
-        const nextDays = (7 - (totalDisplayed % 7)) % 7; // para não adicionar 7 dias se já for múltiplo de 7
+        const nextDays = (7 - (totalDisplayed % 7)) % 7;
 
         for (let i = 1; i <= nextDays; i++) {
             const dayDiv = document.createElement('div');
